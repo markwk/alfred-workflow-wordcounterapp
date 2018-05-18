@@ -21,19 +21,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>42FEFBDB-D0AD-478D-84DE-59F0B73D9D1D</key>
 		<array>
 			<dict>
@@ -73,6 +60,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>AA782078-64E3-4A39-AD44-596DC7D44EF8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E62BBF2D-72C0-4AE6-B5B7-3019821F2A91</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>CA1B0457-0E38-4B8F-BD37-42678C6959A4</key>
 		<array>
 			<dict>
@@ -99,6 +99,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E62BBF2D-72C0-4AE6-B5B7-3019821F2A91</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>94537480-C5CA-41BB-82AB-00C3F93888F1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E956E050-9FE2-43A0-9F8D-B759F3964F45</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AA782078-64E3-4A39-AD44-596DC7D44EF8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string></string>
@@ -110,29 +136,6 @@
 	<string>Word Counter</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>/usr/bin/python wordcounter.py $1</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>DA80E3EF-F889-4042-A71C-A9E07992232F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -217,6 +220,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/python wordcounter.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DA80E3EF-F889-4042-A71C-A9E07992232F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -264,40 +290,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string></string>
-				<key>title</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>D3A870E1-7D26-47BA-A416-24FAFA9A3D22</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>config</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>42FEFBDB-D0AD-478D-84DE-59F0B73D9D1D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -321,21 +313,34 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>wordstoday</string>
-				<key>subtext</key>
-				<string>Today's Word Count Stats</string>
-				<key>text</key>
-				<string>Word Counter - Today's Stats</string>
-				<key>withspace</key>
-				<false/>
+				<key>triggerid</key>
+				<string>config</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
+			<string>42FEFBDB-D0AD-478D-84DE-59F0B73D9D1D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D3A870E1-7D26-47BA-A416-24FAFA9A3D22</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -347,9 +352,11 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python /Users/markkoester/Development/Python/word_counter_scripts/word_counter_today_total.py</string>
+				<string>query=$1
+
+echo -n $query</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -358,9 +365,96 @@
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+			<string>E62BBF2D-72C0-4AE6-B5B7-3019821F2A91</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>export</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>E956E050-9FE2-43A0-9F8D-B759F3964F45</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>wcountexport</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Processing...</string>
+				<key>script</key>
+				<string>query=$1
+
+echo -n $query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Tap to Export File</string>
+				<key>title</key>
+				<string>Word Counter Export of Daily Stats</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>AA782078-64E3-4A39-AD44-596DC7D44EF8</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>adduuid</key>
+				<false/>
+				<key>allowemptyfiles</key>
+				<true/>
+				<key>createintermediatefolders</key>
+				<false/>
+				<key>filename</key>
+				<string>wordcounter-stats-export.csv</string>
+				<key>filetext</key>
+				<string>{query}</string>
+				<key>relativepathmode</key>
+				<integer>1</integer>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.writefile</string>
+			<key>uid</key>
+			<string>94537480-C5CA-41BB-82AB-00C3F93888F1</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -373,20 +467,6 @@
 			<integer>50</integer>
 			<key>ypos</key>
 			<integer>40</integer>
-		</dict>
-		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
-		<dict>
-			<key>xpos</key>
-			<integer>250</integer>
-			<key>ypos</key>
-			<integer>340</integer>
-		</dict>
-		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
-		<dict>
-			<key>xpos</key>
-			<integer>60</integer>
-			<key>ypos</key>
-			<integer>340</integer>
 		</dict>
 		<key>42FEFBDB-D0AD-478D-84DE-59F0B73D9D1D</key>
 		<dict>
@@ -416,6 +496,20 @@
 			<key>ypos</key>
 			<integer>40</integer>
 		</dict>
+		<key>94537480-C5CA-41BB-82AB-00C3F93888F1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>620</integer>
+			<key>ypos</key>
+			<integer>310</integer>
+		</dict>
+		<key>AA782078-64E3-4A39-AD44-596DC7D44EF8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>310</integer>
+		</dict>
 		<key>CA1B0457-0E38-4B8F-BD37-42678C6959A4</key>
 		<dict>
 			<key>xpos</key>
@@ -436,6 +530,20 @@
 			<integer>450</integer>
 			<key>ypos</key>
 			<integer>40</integer>
+		</dict>
+		<key>E62BBF2D-72C0-4AE6-B5B7-3019821F2A91</key>
+		<dict>
+			<key>xpos</key>
+			<integer>440</integer>
+			<key>ypos</key>
+			<integer>310</integer>
+		</dict>
+		<key>E956E050-9FE2-43A0-9F8D-B759F3964F45</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>310</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>

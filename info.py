@@ -43,6 +43,7 @@ from workflow import (
 
 from config import (
     ICON_HELP,
+    ICON_BUG,
     KEYWORD_SETTINGS,
     README_URL,
     HELP_URL
@@ -102,7 +103,7 @@ def main(wf):
              subtitle='Log a bug your browser',
              valid=True,
              arg='--logbug',
-             icon=ICON_HELP),
+             icon=ICON_BUG),
 
     ]
 

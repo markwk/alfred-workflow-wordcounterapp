@@ -30,5 +30,8 @@ README_URL  = 'https://github.com/markwk/alfred-workflow-wordcounterapp'
 # Icons
 # ----------------------------------------------------------------------
 ICON_HELP = 'icons/help.png'
+ICON_BUG = 'icons/bug.png'
 ICON_UPDATE = 'icons/update-available.png'
-
+ICON_DAY = 'icons/calendar_day.png'
+ICON_DATE_RANGE = 'icons/date_range.png'
+ICON_CHART = 'icons/chart.png'

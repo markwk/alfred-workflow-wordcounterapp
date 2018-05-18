@@ -2,7 +2,7 @@
 
 # Alfred Ulysses Workflow
 
-[Alfred 3 workflow](https://www.alfredapp.com/workflows/) to look up word count stats from Word Counter App
+[Alfred 3 workflow](https://www.alfredapp.com/workflows/) to look up word count stats from [Word Counter App](https://wordcounterapp.com/)
 
 ## Install
 
@@ -17,5 +17,5 @@ TODO
 
 ## To contribute
 
-To contribute to the workflow please fork on github
+To contribute to the workflow please fork on github at https://github.com/markwk/alfred-workflow-wordcounterapp
 
