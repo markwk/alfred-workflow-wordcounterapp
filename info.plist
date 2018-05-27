@@ -35,36 +35,12 @@
 			</dict>
 		</array>
 		<key>5593FF1A-AD27-40AB-9609-301A5B0B9848</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>D3A870E1-7D26-47BA-A416-24FAFA9A3D22</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>793D40E7-3110-497B-80CB-BEC75CB31A4A</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>DA80E3EF-F889-4042-A71C-A9E07992232F</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>AA782078-64E3-4A39-AD44-596DC7D44EF8</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E62BBF2D-72C0-4AE6-B5B7-3019821F2A91</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -87,44 +63,9 @@
 			</dict>
 		</array>
 		<key>DA80E3EF-F889-4042-A71C-A9E07992232F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>645D86F5-0151-4905-B737-1F0261374D33</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>E62BBF2D-72C0-4AE6-B5B7-3019821F2A91</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>94537480-C5CA-41BB-82AB-00C3F93888F1</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>E956E050-9FE2-43A0-9F8D-B759F3964F45</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>AA782078-64E3-4A39-AD44-596DC7D44EF8</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 	</dict>
 	<key>createdby</key>
 	<string></string>
@@ -175,7 +116,7 @@
 				<key>runningsubtext</key>
 				<string>Please Wait</string>
 				<key>script</key>
-				<string>/usr/bin/python wordcounter.py "$1"</string>
+				<string>/usr/bin/python wordcounter.py {$1}</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -195,27 +136,6 @@
 			<string>793D40E7-3110-497B-80CB-BEC75CB31A4A</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>645D86F5-0151-4905-B737-1F0261374D33</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -254,7 +174,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>wordcounterhelp</string>
+				<string>wchelp</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -326,52 +246,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string></string>
-				<key>title</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>D3A870E1-7D26-47BA-A416-24FAFA9A3D22</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>query=$1
-
-echo -n $query</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E62BBF2D-72C0-4AE6-B5B7-3019821F2A91</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>triggerid</key>
 				<string>export</string>
 			</dict>
@@ -382,83 +256,17 @@ echo -n $query</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>wcountexport</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Processing...</string>
-				<key>script</key>
-				<string>query=$1
-
-echo -n $query</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Tap to Export File</string>
-				<key>title</key>
-				<string>Word Counter Export of Daily Stats</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>AA782078-64E3-4A39-AD44-596DC7D44EF8</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>adduuid</key>
-				<false/>
-				<key>allowemptyfiles</key>
-				<true/>
-				<key>createintermediatefolders</key>
-				<false/>
-				<key>filename</key>
-				<string>wordcounter-stats-export.csv</string>
-				<key>filetext</key>
-				<string>{query}</string>
-				<key>relativepathmode</key>
-				<integer>1</integer>
-				<key>type</key>
-				<integer>1</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.writefile</string>
-			<key>uid</key>
-			<string>94537480-C5CA-41BB-82AB-00C3F93888F1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>This simple workflow lets you add tasks to to-do lists, using a separate text file for each list.
+
+Type "todo" followed by your task, then choose a to-do list, or type "vtodo" to view the list of your choice.
+
+CHANGING DEFAULTS
+
+To-do lists location: The workflow saves your to-do lists in ~/Documents/Alfred/todos/ but you can change the path in the Workflow Environment Variables window.
+
+Lists names: These are "Work", "Home" and "Waiting For" by default. You can change them in the List Filter object within the workflow.</string>
 	<key>uidata</key>
 	<dict>
 		<key>14C9E027-FF6F-4FFE-BA34-2289B1446ACE</key>
@@ -482,45 +290,17 @@ echo -n $query</string>
 			<key>ypos</key>
 			<integer>170</integer>
 		</dict>
-		<key>645D86F5-0151-4905-B737-1F0261374D33</key>
-		<dict>
-			<key>xpos</key>
-			<integer>610</integer>
-			<key>ypos</key>
-			<integer>40</integer>
-		</dict>
 		<key>793D40E7-3110-497B-80CB-BEC75CB31A4A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>250</integer>
 			<key>ypos</key>
 			<integer>40</integer>
-		</dict>
-		<key>94537480-C5CA-41BB-82AB-00C3F93888F1</key>
-		<dict>
-			<key>xpos</key>
-			<integer>620</integer>
-			<key>ypos</key>
-			<integer>310</integer>
-		</dict>
-		<key>AA782078-64E3-4A39-AD44-596DC7D44EF8</key>
-		<dict>
-			<key>xpos</key>
-			<integer>260</integer>
-			<key>ypos</key>
-			<integer>310</integer>
 		</dict>
 		<key>CA1B0457-0E38-4B8F-BD37-42678C6959A4</key>
 		<dict>
 			<key>xpos</key>
 			<integer>250</integer>
-			<key>ypos</key>
-			<integer>170</integer>
-		</dict>
-		<key>D3A870E1-7D26-47BA-A416-24FAFA9A3D22</key>
-		<dict>
-			<key>xpos</key>
-			<integer>620</integer>
 			<key>ypos</key>
 			<integer>170</integer>
 		</dict>
@@ -531,13 +311,6 @@ echo -n $query</string>
 			<key>ypos</key>
 			<integer>40</integer>
 		</dict>
-		<key>E62BBF2D-72C0-4AE6-B5B7-3019821F2A91</key>
-		<dict>
-			<key>xpos</key>
-			<integer>440</integer>
-			<key>ypos</key>
-			<integer>310</integer>
-		</dict>
 		<key>E956E050-9FE2-43A0-9F8D-B759F3964F45</key>
 		<dict>
 			<key>xpos</key>
@@ -546,6 +319,13 @@ echo -n $query</string>
 			<integer>310</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>path</key>
+		<string>~/Documents/Alfred/wordcounter/</string>
+	</dict>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string></string>
 </dict>

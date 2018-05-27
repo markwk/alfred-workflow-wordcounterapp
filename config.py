@@ -17,7 +17,7 @@ import shutil
 # Keywords assigned to Alfred Keywords/Script Filters
 # ----------------------------------------------------------------------
 KEYWORD_WORDCOUNTER = 'wcount'
-KEYWORD_SETTINGS = 'wordcounterhelp'
+KEYWORD_SETTINGS = 'wcounthelp'
 
 
 # ----------------------------------------------------------------------
@@ -32,6 +32,9 @@ README_URL  = 'https://github.com/markwk/alfred-workflow-wordcounterapp'
 ICON_HELP = 'icons/help.png'
 ICON_BUG = 'icons/bug.png'
 ICON_UPDATE = 'icons/update-available.png'
+ICON_TODAY = 'icons/today.png'
 ICON_DAY = 'icons/calendar_day.png'
 ICON_DATE_RANGE = 'icons/date_range.png'
 ICON_CHART = 'icons/chart.png'
+ICON_BLD = 'icons/building.png'
+ICON_FILE = 'icons/file.png'

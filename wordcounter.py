@@ -5,25 +5,8 @@
 #
 # MIT Licence. See http://opensource.org/licenses/MIT
 #
-# Created on 2014-12-26
+# Created on 2018-05
 #
-
-"""wordcounter.py [options] [<query>]
-
-View/manage workflow settings.
-
-Usage:
-    wordcounter.py [<query>]
-    wordcounter.py (-h|--help)
-    wordcounter.py --today
-    wordcounter.py --yesterday
-
-Options:
-    -h, --help    Show this message
-    --today    Today's Word Counter Stats
-    --yesterday      Yesterday's Word Counter Stats
-
-"""
 
 from __future__ import absolute_import
 
@@ -33,6 +16,8 @@ import os
 import plistlib
 import time
 import datetime as datetime
+import calendar
+import locale
 
 from docopt import docopt
 
@@ -42,19 +27,20 @@ from workflow import (
     ICON_WEB,
     MATCH_ALL,
     MATCH_ALLCHARS,
-    Workflow3,
+    Workflow3
 )
 
 from config import (
-    ICON_HELP,
+    ICON_TODAY,
     ICON_DAY,
     ICON_DATE_RANGE,
     ICON_CHART,
-    KEYWORD_WORDCOUNTER,
-    README_URL,
-    HELP_URL
+    ICON_BLD,
+    ICON_FILE,
+    KEYWORD_WORDCOUNTER
 )
 
+locale.setlocale(locale.LC_ALL, 'en_US')
 
 log = None
 
@@ -63,177 +49,74 @@ DELIMITER = u'\u203a'  # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
 ALFRED_AS = 'tell application "Alfred 3" to search "{}"'.format(
     KEYWORD_WORDCOUNTER)
 
-
 # read PLIST
 records = os.path.expanduser('~/Library/Application Support/WordCounter/app_records.plist')
 data = plistlib.readPlist(records)
 
+num_days = 6
+today = datetime.date.today()
+yesterday = today - datetime.timedelta(days=1)
+start_date = today - datetime.timedelta(days=num_days)
+date_list = [start_date + datetime.timedelta(days=x) for x in range(0, num_days)]
+
+def process_date_stats(date):
+  try:
+    # collect per-app totals
+    apps = data[date]
+    counts = []
+    for app in apps:
+        count = reduce(add, app["counts"])
+        counts.append(count)
+        # Uncomment to print per-app count
+        # print app["id"] + ": " + str(count)
+    # compute total from collection
+    total = reduce(add, counts)
+    return total
+  except:
+    return 0
+
 def add(x, y): return x + y
 
-def word_count_total(date):
-	# collect per-app totals
-	apps = data[date]
-	counts = []
-	for app in apps:
-	    count = reduce(add, app["counts"])
-	    counts.append(count)
-	    total = reduce(add, counts)	    
-	return total
-
-def word_count_details(date):
-	# collect per-app totals
-	apps = data[date]
-	counts = []
-	for app in apps:
-	    count = reduce(add, app["counts"])
-	    counts.append(count)
-	    print app["id"] + " " + str(count)
-	    # TODO: Hit Enter to Day Report with View of Per App Breakdown
-	    # wf.add_item(title=app["id"], subtitle=count, )
-	    total = reduce(add, counts)	    
-	print "total: " + str(total)
-
-def word_counter_lookup(query):
-
-	today = datetime.date.today()
-
-	# Process Date Arguments
-	if query == 'today':
-		today = today.strftime("%Y-%m-%d")
-		return word_count_total(today)
-
-	elif query == 'yesterday':
-		yesterday = today - datetime.timedelta(days=1)
-		yesterday = yesterday.strftime("%Y-%m-%d")
-		return word_count_total(yesterday)
-
-	# TODO
-	elif query == 'previous7':
-		return 'TODO'
-
-def word_counter_lookup_details(query):
-
-	today = datetime.date.today()
-
-	# Process Date Arguments
-	if query == 'today':
-		today = today.strftime("%Y-%m-%d")
-		return word_count_details(today)
-
-	elif query == 'yesterday':
-		yesterday = today - datetime.timedelta(days=1)
-		yesterday = yesterday.strftime("%Y-%m-%d")
-		return word_count_details(yesterday)
-
-	# TODO
-	elif query == 'previous7':
-		return 'TODO'
-
-def handle_delimited_query(query):
-    """Process sub-commands.
-
-    Args:
-        query (str): User query
-
-    """
-    # Currencies or decimal places
-    if query.endswith(DELIMITER):  # User deleted trailing space
-        subprocess.call(['osascript', '-e', ALFRED_AS])
-        return
-
-    mode, query = [s.strip() for s in query.split(DELIMITER)]
-
-    if mode == 'today':
-    	today = time.strftime("%Y-%m-%d")
-    	word_count_details(today)
-
-        if query:
-            today = wf.filter(query, today,
-                                   key=lambda t: ' '.join(t),
-                                   match_on=MATCH_ALL ^ MATCH_ALLCHARS,
-                                   min_score=30)
-
-        else:  # Show Message
-            pass
-
-        wf.send_feedback()
+def word_count_multidays_total(date1, num_days):
+    date_list = [date1 + datetime.timedelta(days=x) for x in range(0, num_days)]
+    total = 0
+    # print "date1: " + date1.strftime("%Y-%m-%d")
+    for d in date_list:
+        # print date.strftime("%Y-%m-%d")
+        total = total + process_date_stats(d.strftime("%Y-%m-%d"))
+    return locale.format("%d", total, grouping=True)
 
 def main(wf):
-    """Run Script Filter.
+    # todayStats
+    today_stats = process_date_stats(today.strftime("%Y-%m-%d"))
+    today_text = "Today's Word Count"
+    wf.add_item(today_text, today_stats, valid=True, icon=ICON_TODAY)
 
-    Args:
-        wf (workflow.Workflow): Workflow object.
+    # Previous 6 Days
+    for d in reversed(date_list):
+      total = process_date_stats(d.strftime("%Y-%m-%d"))
+      if d == yesterday:
+        day = "Yesterday's Word Count"
+      else:
+        day = d.strftime("%A, %B %d, %Y")
+      wf.add_item(day, total, valid=True, icon=ICON_DAY)
 
-    """
-    args = docopt(__doc__, wf.args)
+    # this month
+    this_mo_num_days = calendar.monthrange(today.year, today.month)[1]
+    this_mo_days = [datetime.date(today.year, today.month, day) for day in range(1, this_mo_num_days+1)]
+    # print mo_days[0]
+    this_month_total = word_count_multidays_total(this_mo_days[0], this_mo_num_days)
+    wf.add_item(today.strftime("%B %Y Word Count"), this_month_total, valid=True, icon=ICON_DATE_RANGE)
 
-    log.debug('args : {!r}'.format(args))
-
-    query = args.get('<query>')
-
-    # bootstrap(wf)
-
-    # Alternative actions ----------------------------------------------
-
-    
-    if args.get('--today'):
-        word_counter_lookup_details("today")
-        return
-
-    if args.get('--yesterday'):
-        word_counter_lookup_details("yesterday")
-        return
-
-    if args.get('--previous7'):
-        word_counter_lookup("previous7")
-        return
-   
-    # Parse query ------------------------------------------------------
-
-    if DELIMITER in query:
-        return handle_delimited_query(query)
-
-    # Filter options ---------------------------------------------------
-
-    query = query.strip()
-
-    options = [
-        dict(title="Today's Word Count",
-             subtitle=word_counter_lookup("today"),
-             valid=True,
-             # TODO: Copy text to clipboard
-             # arg='--today',
-             autocomplete=u'today {} '.format(DELIMITER),
-             icon=ICON_DAY),
-
-        dict(title="Yesterday's Word Count",
-             subtitle=word_counter_lookup("yesterday"),
-             valid=True,
-             # arg='--yesterday',
-             icon=ICON_DATE_RANGE),
-
-        dict(title="Previous 7 Days' Word",
-             subtitle=word_counter_lookup("previous7"),
-             valid=True,
-             # arg='--previous7',
-             icon=ICON_CHART),
-
-    ]
-
-    if query:
-        options = wf.filter(query, options, key=lambda d: d['title'],
-                            min_score=30)
-
-    if not options:
-        wf.add_item('No matching options', 'Try a different query?',
-                    icon=ICON_WARNING)
-
-    for d in options:
-        wf.add_item(**d)
+    # this month
+    lastmo = this_mo_days[0] - datetime.timedelta(days=1)
+    last_mo_num_days = calendar.monthrange(lastmo.year, lastmo.month)[1]
+    last_mo_days = [datetime.date(lastmo.year, lastmo.month, day) for day in range(1, last_mo_num_days+1)]
+    # print mo_days[0]
+    last_month_total = word_count_multidays_total(last_mo_days[0], last_mo_num_days)
+    wf.add_item(lastmo.strftime("%B %Y Word Count"), last_month_total, valid=True, icon=ICON_DATE_RANGE)
 
     wf.send_feedback()
-    return
-
 
 if __name__ == '__main__':
     wf = Workflow3()
