@@ -68,9 +68,9 @@
 		<array/>
 	</dict>
 	<key>createdby</key>
-	<string></string>
+	<string>Mark Koester</string>
 	<key>description</key>
-	<string></string>
+	<string>Stats and Export for Word Counter App</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -80,15 +80,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>wcount</string>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/python wordcounter.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>14C9E027-FF6F-4FFE-BA34-2289B1446ACE</string>
+			<string>DA80E3EF-F889-4042-A71C-A9E07992232F</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -140,25 +150,15 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>/usr/bin/python wordcounter.py $1</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>triggerid</key>
+				<string>wcount</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>DA80E3EF-F889-4042-A71C-A9E07992232F</string>
+			<string>14C9E027-FF6F-4FFE-BA34-2289B1446ACE</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -210,6 +210,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>triggerid</key>
+				<string>config</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>42FEFBDB-D0AD-478D-84DE-59F0B73D9D1D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -234,19 +247,6 @@
 			<key>config</key>
 			<dict>
 				<key>triggerid</key>
-				<string>config</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>42FEFBDB-D0AD-478D-84DE-59F0B73D9D1D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
 				<string>export</string>
 			</dict>
 			<key>type</key>
@@ -258,15 +258,12 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>This simple workflow lets you add tasks to to-do lists, using a separate text file for each list.
+	<string>Word Counter App Stats and Export
 
-Type "todo" followed by your task, then choose a to-do list, or type "vtodo" to view the list of your choice.
+* View overview stats from today, yesterday and previous days
+* Export full stats to CSV. 
 
-CHANGING DEFAULTS
-
-To-do lists location: The workflow saves your to-do lists in ~/Documents/Alfred/todos/ but you can change the path in the Workflow Environment Variables window.
-
-Lists names: These are "Work", "Home" and "Waiting For" by default. You can change them in the List Filter object within the workflow.</string>
+Export location: The workflow saves your stats export in ~/Documents/Alfred/wordcounter/ but you can change the path in the Workflow Environment Variables window.</string>
 	<key>uidata</key>
 	<dict>
 		<key>14C9E027-FF6F-4FFE-BA34-2289B1446ACE</key>
@@ -327,6 +324,6 @@ Lists names: These are "Work", "Home" and "Waiting For" by default. You can chan
 	<key>version</key>
 	<string></string>
 	<key>webaddress</key>
-	<string></string>
+	<string>www.markwk.com</string>
 </dict>
 </plist>
