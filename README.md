@@ -6,7 +6,7 @@
 
 ## Install
 
-Download Workflow and install. 
+[Download Workflow](https://github.com/markwk/alfred-workflow-wordcounterapp/raw/master/Word%20Counter.alfredworkflow), open and and install. 
 
 ## Thanks
 - [deanishe](https://www.alfredforum.com/profile/5235-deanishe/) for the awesome [Python workflow library](http://www.deanishe.net/alfred-workflow/index.html)
