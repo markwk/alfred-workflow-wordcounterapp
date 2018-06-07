@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.markwk.alfred.wordcounter</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -70,7 +70,7 @@
 	<key>createdby</key>
 	<string>Mark Koester</string>
 	<key>description</key>
-	<string>Stats and Export for Word Counter App</string>
+	<string>Stats from Word Counter App</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
