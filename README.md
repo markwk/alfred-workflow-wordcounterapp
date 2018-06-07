@@ -6,7 +6,9 @@
 
 ## Installation
 
-[Download Workflow](https://github.com/markwk/alfred-workflow-wordcounterapp/raw/master/Word%20Counter.alfredworkflow), open and and install. 
+[Download Workflow from Packal](https://github.com/packal/repository/raw/master/com.markwk.alfred.wordcounter/word_counter.alfredworkflow), open and and install. 
+
+(Alternatively [download workflow from github](https://github.com/markwk/alfred-workflow-wordcounterapp/raw/master/Word%20Counter.alfredworkflow)) 
 
 ## Usage
 
