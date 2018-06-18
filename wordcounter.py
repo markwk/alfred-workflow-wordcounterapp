@@ -53,7 +53,7 @@ ALFRED_AS = 'tell application "Alfred 3" to search "{}"'.format(
 records = os.path.expanduser('~/Library/Application Support/WordCounter/app_records.plist')
 data = plistlib.readPlist(records)
 
-num_days = 6
+num_days = 5
 today = datetime.date.today()
 yesterday = today - datetime.timedelta(days=1)
 start_date = today - datetime.timedelta(days=num_days)
@@ -115,6 +115,12 @@ def main(wf):
     # print mo_days[0]
     last_month_total = word_count_multidays_total(last_mo_days[0], last_mo_num_days)
     wf.add_item(lastmo.strftime("%B %Y Word Count"), last_month_total, valid=True, icon=ICON_DATE_RANGE)
+
+    # this year
+    start_dt = datetime.date(today.year, 1, 1)
+    days_in_the_year = (today - datetime.date(today.year,1,1)).days + 1
+    this_year_total = word_count_multidays_total(start_dt, days_in_the_year)
+    wf.add_item("This Year's Word Count", str(this_year_total), valid=True, icon=ICON_DATE_RANGE)
 
     wf.send_feedback()
 
