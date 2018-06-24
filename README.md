@@ -2,7 +2,7 @@
 
 ![Word Counter Alfred Workflow Screenshot](https://github.com/markwk/alfred-workflow-wordcounterapp/blob/master/screenshot.jpg)
 
-[Alfred 3 workflow](https://www.alfredapp.com/workflows/) for [Word Counter App](https://wordcounterapp.com/). View your word count stats from previous days and months in Alfred. 
+[Alfred 3 workflow](https://www.alfredapp.com/workflows/) for [Word Counter App](https://wordcounterapp.com/). View your word count stats from previous days and months in Alfred and export daily stats to CSV. 
 
 ## Installation
 
@@ -13,7 +13,9 @@
 ## Usage
 
 * `wcount` - this command will pull up recent stats.
+* `wcexport` - export daily word count stats to CSV (example, ~/Documents/WordCounter/export.csv)
 * `wchelp` - access links to help and posting bugs
+
 
 ## BONUS: Daily Popup Notification with Yesterday's Word Count
 
