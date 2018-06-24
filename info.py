@@ -5,7 +5,7 @@
 #
 # MIT Licence. See http://opensource.org/licenses/MIT
 #
-# Created on 2014-12-26
+# Created on 2018-05
 #
 
 """info.py [options] [<query>]

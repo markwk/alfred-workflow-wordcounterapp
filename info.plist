@@ -64,8 +64,32 @@
 		</array>
 		<key>DA80E3EF-F889-4042-A71C-A9E07992232F</key>
 		<array/>
+		<key>E6C8BB36-1FF0-4F0A-B0B8-42969DB1A47F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F4CD2943-4E90-4371-9095-899C46D43D62</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>E956E050-9FE2-43A0-9F8D-B759F3964F45</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E6C8BB36-1FF0-4F0A-B0B8-42969DB1A47F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Mark Koester</string>
@@ -80,25 +104,15 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>/usr/bin/python wordcounter.py $1</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>triggerid</key>
+				<string>wcount</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>DA80E3EF-F889-4042-A71C-A9E07992232F</string>
+			<string>14C9E027-FF6F-4FFE-BA34-2289B1446ACE</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -150,15 +164,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>wcount</string>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/python wordcounter.py $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>14C9E027-FF6F-4FFE-BA34-2289B1446ACE</string>
+			<string>DA80E3EF-F889-4042-A71C-A9E07992232F</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -256,6 +280,74 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F4CD2943-4E90-4371-9095-899C46D43D62</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>wcexport</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>/usr/bin/python export.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>View Export File</string>
+				<key>title</key>
+				<string>Word Counter Stats Export</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E6C8BB36-1FF0-4F0A-B0B8-42969DB1A47F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Word Counter App Stats and Export
@@ -308,10 +400,24 @@ Export location: The workflow saves your stats export in ~/Documents/Alfred/word
 			<key>ypos</key>
 			<integer>40</integer>
 		</dict>
+		<key>E6C8BB36-1FF0-4F0A-B0B8-42969DB1A47F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>310</integer>
+		</dict>
 		<key>E956E050-9FE2-43A0-9F8D-B759F3964F45</key>
 		<dict>
 			<key>xpos</key>
 			<integer>50</integer>
+			<key>ypos</key>
+			<integer>310</integer>
+		</dict>
+		<key>F4CD2943-4E90-4371-9095-899C46D43D62</key>
+		<dict>
+			<key>xpos</key>
+			<integer>460</integer>
 			<key>ypos</key>
 			<integer>310</integer>
 		</dict>
