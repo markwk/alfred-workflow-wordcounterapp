@@ -23,6 +23,14 @@
 
 Want to receive a popup notification each morning with the previous day's workcount? The project contains a special file called "word_counter_yesterday_notify.py," and you can edit your crontab to run this script at a set time each day. Copy the file location and then [follow these steps to setup your Mac's crontab schedule](https://ole.michelsen.dk/blog/schedule-jobs-with-crontab-on-mac-osx.html).
 
+## BONUS: Graphic / Chart of Previous Days Word Counter Stats
+
+![Word Counter Data Report Example](https://github.com/markwk/alfred-workflow-wordcounterapp/blob/master/wordcounter-data-report-example.pngg)
+
+* `report.py` can be used to generate a simple graphic or or chart of your previous days' word count stats. When running the command be sure to include the number of days and target directory for the generated graphic.  
+* You'll need to have installed matplotlib library which you can install with the command `$ pip install matplotlib`. 
+* Usage: `$ python report.py NUM_DAYS TARGET_DIR` like: `python report.py 7 /Users/my-user-name/Desktop/` 
+
 ## Thanks / Acknowledgements
 
 - [deanishe](https://www.alfredforum.com/profile/5235-deanishe/) for the awesome [Python workflow library](http://www.deanishe.net/alfred-workflow/index.html)
