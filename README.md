@@ -25,7 +25,7 @@ Want to receive a popup notification each morning with the previous day's workco
 
 ## BONUS: Graphic / Chart of Previous Days Word Counter Stats
 
-![Word Counter Data Report Example](https://github.com/markwk/alfred-workflow-wordcounterapp/blob/master/wordcounter-data-report-example.pngg)
+![Word Counter Data Report Example](https://github.com/markwk/alfred-workflow-wordcounterapp/blob/master/wordcounter-data-report-example.png)
 
 * `report.py` can be used to generate a simple graphic or or chart of your previous days' word count stats. When running the command be sure to include the number of days and target directory for the generated graphic.  
 * You'll need to have installed matplotlib library which you can install with the command `$ pip install matplotlib`. 
